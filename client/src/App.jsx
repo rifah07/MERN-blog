@@ -6,9 +6,13 @@ import ArticleList from "./pages/ArticleList";
 import Article from "./pages/Article";
 
 import "./App.css";
+
+//components
+import Navbar from "./components/Navbar";
 function App() {
   return (
     <Router>
+      <Navbar />
       {" "}
       <div className="max-w-screen-md mx-auto pt-20">
         <Routes>
