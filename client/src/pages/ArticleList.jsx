@@ -30,8 +30,16 @@ const ArticleList = () => {
                     </h3>
                   </Link>
                   <p className="leading-relaxed mb-3 ">
-                    {article.content[0].substring(0,100)}...
+                    {article.content[0].substring(0, 100)}...
                   </p>
+                  <div className="dlex items-center flex-wrap">
+                    <Link
+                      to={`/article/${article.name}`}
+                      className="text-indigo-500 inline-flex items-center md;mb-2 lg:mb-0"
+                    >
+                      Learn More
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
