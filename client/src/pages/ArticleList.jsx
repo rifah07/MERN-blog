@@ -15,7 +15,7 @@ const ArticleList = () => {
         <div className="h-full border-2 border-gray-200
         border-opacity-60 rounded-lg overflow-hidden">
           <Link to={`/article/${article.name}`}>
-          <img className="lg:h-48 md:h-36 w-fulll object-cover object-center"
+          <img className="lg:h-48 md:h-36 w-full object-cover object-center"
           src={article.thumbnail}
           alt="blog" />
           </Link>
