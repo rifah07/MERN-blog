@@ -1,4 +1,5 @@
 import React from "react";
+import articleContent from "./ArticleContent";
 
 const ArticleList = () => {
   return (
