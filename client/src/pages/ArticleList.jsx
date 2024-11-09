@@ -12,7 +12,7 @@ const ArticleList = () => {
       </h1>
       <div className="container py-4 mx-auto">
         <div className="flex flex-wrap -m-4">
-         <Articles articles={articleContent}/>
+          <Articles articles={articleContent} />
         </div>
       </div>
     </div>
