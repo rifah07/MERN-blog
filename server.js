@@ -19,10 +19,10 @@ const articlesInfo= {
 app.use(express.json({extended:false}));
 
 //route to check connection
-app.get('/', (req, res) => res.send("Assalamu alaikum!"));
-app.post("/", (req, res) => res.send(`Assalamu alaikum ${req.body.name}`));
+//app.get('/', (req, res) => res.send("Assalamu alaikum!"));
+//app.post("/", (req, res) => res.send(`Assalamu alaikum ${req.body.name}`));
 
 //route parameter
-app.get('/greet/:name', (req, res) => res.send(`Assalamu alaikum ${req.params.name}!`));
+//app.get('/greet/:name', (req, res) => res.send(`Assalamu alaikum ${req.params.name}!`));
 
 app.listen(PORT, ()=> console.log(`Server started at port ${PORT}`));
