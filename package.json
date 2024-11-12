@@ -10,7 +10,8 @@
   "license": "ISC",
   "description": "Blog App with MERN Stack. This is my First Full-Stack app by MERN Stack.",
   "dependencies": {
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "mongose": "^0.0.2-security"
   },
   "devDependencies": {
     "concurrently": "^9.1.0",
