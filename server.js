@@ -3,18 +3,6 @@ const app= express();
 const PORT= process.env.PORT || 3000
 
 
-const articlesInfo= {
-    "learn-react" : {
-        comments: [],
-    },
-    "learn-node" : {
-        comments: [],
-    },
-    "my-thoughts-on-learning-react" : {
-        comments: [],
-    },
-};
-
 //built in middleware
 app.use(express.json({extended:false}));
 
