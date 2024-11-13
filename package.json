@@ -11,6 +11,7 @@
   "description": "Blog App with MERN Stack. This is my First Full-Stack app by MERN Stack.",
   "dependencies": {
     "express": "^4.21.1",
+    "mongodb": "^6.10.0",
     "mongose": "^0.0.2-security"
   },
   "devDependencies": {
