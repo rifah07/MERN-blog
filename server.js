@@ -1,15 +1,15 @@
-const express=require('express')
-const app= express();
-const PORT= process.env.PORT || 3000
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 //built in middleware
-app.use(express.json({extended:false}));
+app.use(express.json({ extended: false }));
 
-app.post("/api/articles/:name/add-comments", (req,res) => {
-    const {username, text} = req.body;
-    const articleName = req.params.name;
-    articlesInfo[articleName].comments.push({username, text});
-    res.status(200).send(articlesInfo[articleName]);
+app.post("/api/articles/:name/add-comments", (req, res) => {
+  const { username, text } = req.body;
+  const articleName = req.params.name;
+  articlesInfo[articleName].comments.push({ username, text });
+  res.status(200).send(articlesInfo[articleName]);
 });
 
 //route to check connection
@@ -19,4 +19,4 @@ app.post("/api/articles/:name/add-comments", (req,res) => {
 //route parameter
 //app.get('/greet/:name', (req, res) => res.send(`Assalamu alaikum ${req.params.name}!`));
 
-app.listen(PORT, ()=> console.log(`Server started at port ${PORT}`));
+app.listen(PORT, () => console.log(`Server started at port ${PORT}`));
