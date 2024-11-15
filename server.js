@@ -15,14 +15,17 @@ const withDB = async (operations, res) => {
   } catch (error) {
     res.status(500).json({ message: "ERror connecting to Database", error });
   }
-}
+};
 
 app.get("/api/articles/:name", async (req, res) => {
+  withDB(async (db)=>{
     const articleName = req.params.name;
     const articlesInfo = await db
       .collection("articles")
       .findOne({ name: articleName });
     res.status(200).json(articlesInfo);
+  }, res)
+ 
 });
 
 app.post("/api/articles/:name/add-comments", (req, res) => {
