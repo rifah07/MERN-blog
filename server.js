@@ -18,21 +18,36 @@ const withDB = async (operations, res) => {
 };
 
 app.get("/api/articles/:name", async (req, res) => {
-  withDB(async (db)=>{
+  withDB(async (db) => {
     const articleName = req.params.name;
     const articlesInfo = await db
       .collection("articles")
       .findOne({ name: articleName });
     res.status(200).json(articlesInfo);
-  }, res)
- 
+  }, res);
 });
 
 app.post("/api/articles/:name/add-comments", (req, res) => {
   const { username, text } = req.body;
   const articleName = req.params.name;
-  articlesInfo[articleName].comments.push({ username, text });
-  res.status(200).send(articlesInfo[articleName]);
+
+  withDB(async (db) => {
+    const articlesInfo = await db
+      .collection("articles")
+      .findOne({ name: articleName });
+    await db.collection("articles").updateOne(
+      { name: articleName },
+      {
+        $set: {
+          comments: articlesInfo.comments.concat({ username, text }),
+        },
+      }
+    );
+    const updateArticleInfo = await db
+      .collection("articles")
+      .findOne({ name: articleName });
+    res.status(200).json(updateArticleInfo);
+  }, res);
 });
 
 //route to check connection
