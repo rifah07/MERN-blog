@@ -8,8 +8,8 @@ const CommentsList = ({ comments }) => {
       </h3>
       {comments.map((comment, index) => (
         <div key={index}>
-            <h4 className="text-xl font-bold">{comment.username}</h4>
-            <p className="mt-1 mb-4">{comment.text}</p>
+          <h4 className="text-xl font-bold">{comment.username}</h4>
+          <p className="mt-1 mb-4">{comment.text}</p>
         </div>
       ))}
     </>
