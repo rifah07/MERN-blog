@@ -8,6 +8,7 @@ import NotFound from "./NotFound";
 //components
 import Articles from "../components/Articles";
 import CommentsList from "../components/CommentsList";
+import AddCommentForm from "../components/AddCommentForm";
 
 const Article = () => {
   const { name } = useParams();
@@ -38,6 +39,7 @@ const Article = () => {
         </p>
       ))}
       <CommentsList comments={articleInfo.comments} />
+      <AddCommentForm articleName={name} setArticleInfo={setArticleInfo} />
       <h1 className="sm:text-2xl text-xl font-bold my-4 text-gray-900">
         Other Articles
       </h1>
