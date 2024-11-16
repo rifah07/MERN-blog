@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import articleContent from "./ArticleContent";
 import Articles from "../components/Articles";
@@ -9,7 +9,10 @@ import NotFound from "./NotFound";
 const Article = () => {
   const { name } = useParams();
   const article = articleContent.find((article) => article.name === name);
-  const [articleInfo, setArticleInfo] = useState({comments: []});
+  const [articleInfo, setArticleInfo] = useState({ comments: [] });
+  useEffect(() => {
+    console.log("Component mounted");
+  });
   if (!article) return <NotFound />;
   const otherArticles = articleContent.filter(
     (article) => article.name !== name
