@@ -9,6 +9,7 @@ import NotFound from "./NotFound";
 const Article = () => {
   const { name } = useParams();
   const article = articleContent.find((article) => article.name === name);
+  const [articleInfo, setArticleInfo] = useState({comments: []});
   if (!article) return <NotFound />;
   const otherArticles = articleContent.filter(
     (article) => article.name !== name
