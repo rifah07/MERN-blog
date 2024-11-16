@@ -11,8 +11,15 @@ const Article = () => {
   const article = articleContent.find((article) => article.name === name);
   const [articleInfo, setArticleInfo] = useState({ comments: [] });
   useEffect(() => {
-    console.log("Component mounted");
-  });
+    const fetchData= async ()=>{
+      const result= await fetch(`/api/articles/${name}`);
+      const body= await result.json();
+      console.log(body);
+      setArticleInfo(body);
+    }; 
+    fetchData();
+  }, [name]);
+
   if (!article) return <NotFound />;
   const otherArticles = articleContent.filter(
     (article) => article.name !== name
